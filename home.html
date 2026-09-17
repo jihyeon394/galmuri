@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creative Studio — Selected Works</title>
+
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css");
+    :root {
+      --background: #f2f0e9;
+      --text: #11110f;
+      --blue: #2448e8;
+      --coral: #ff715b;
+      --lime: #cbff28;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+
+    }
+* {
+  box-sizing: border-box;
+}
+   
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, "SUIT", sans-serif;
+}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+    }
+
+    /* Header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  align-items: start;
+
+  width: 100%;
+  padding: 18px 22px;
+
+  color: white;
+  font-size: 16px;
+  line-height: 0.95;
+  mix-blend-mode: difference;
+}
+
+    .logo {
+      justify-self: start;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .navigation {
+  display: flex;
+  justify-self: center;
+  gap: 24px;
+  white-space: nowrap;
+}
+
+    .navigation a {
+      position: relative;
+    }
+
+    .navigation a::after {
+      content: "";
+      position: absolute;
+      right: 100%;
+      bottom: -4px;
+      left: 0;
+      height: 1px;
+      background: currentColor;
+      transition: right 250ms ease;
+    }
+
+    .navigation a:hover::after {
+      right: 0;
+    }
+
+  .location {
+  position: static;
+  justify-self: end;
+
+  width: max-content;
+  white-space: nowrap;
+  text-align: right;
+}
+
+    .menu-button {
+      display: none;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    /* Intro */
+
+    .intro {
+      display: flex;
+      min-height: 100svh;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18vh 22px 24px;
+    }
+
+    .label {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .intro h1 {
+      margin: 8vh 0;
+      font-family: var(--serif);
+      font-size: clamp(58px, 9.5vw, 150px);
+      font-weight: 400;
+      line-height: 0.8;
+      letter-spacing: -0.065em;
+    }
+
+    .intro h1 em {
+      font-weight: 400;
+    }
+
+    .intro-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: end;
+      padding-top: 12px;
+      border-top: 1px solid rgba(17, 17, 15, 0.25);
+      font-size: 11px;
+    }
+
+    .intro-footer p {
+      max-width: 410px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .intro-footer span {
+      justify-self: end;
+    }
+
+    /* Cases */
+    
+    /* New home archive */
+
+.hero-archive {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* 이미지 전체 영역 */
+
+.hero-images {
+  position: absolute;
+  inset: 0;
+}
+
+/* 이미지 공통 */
+
+.hero-image {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+
+
+
+  transition:
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 500ms ease;
+}
+
+
+/* 왼쪽 세로 이미지 */
+
+.hero-image-1 {
+  top: 21%;
+  left: 0%;
+  z-index: 2;
+
+  width: 39%;
+  height: 89%;
+
+  opacity: 0.8;
+}
+
+
+/* 중앙 위쪽 이미지 */
+
+.hero-image-2 {
+  top: 7%;
+  left: 35%;
+  z-index: 3;
+
+  width: 39%;
+  height: 24%;
+
+  opacity: 0.8;
+
+}
+
+/* 오른쪽 큰 이미지 */
+
+.hero-image-3 {
+  top: 11%;
+  right: 0%;
+  z-index: 3;
+
+  width: 31%;
+  height: 57%;
+  opacity: 0.8;
+
+}
+
+
+
+/* 왼쪽 아래 이미지 */
+
+.hero-image-4 {
+  bottom: 0%;
+  left: 14%;
+  z-index: 5;
+
+  width: 37%;
+  height: 34%;
+  opacity: 0.8;
+
+  
+}
+
+
+
+/* 오른쪽 아래 작은 이미지 */
+
+.hero-image-5 {
+  right: 4%;
+  bottom: -1%;
+  z-index: 6;
+
+  width: 18%;
+  height: 40%;
+  opacity: 0.8;
+
+ 
+}
+
+
+/* 중앙 타이틀 */
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+
+  width: min(1200px, 90vw);
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+}
+
+.hero-title-image {
+  display: block;
+
+  width: clamp(500px, 78vw, 1200px);
+  max-width: 100%;
+  height: auto;
+
+  margin: clamp(30px, 5vh, 70px) auto;
+  object-fit: contain;
+}
+
+/* 타이틀 아래 작은 설명 */
+
+.hero-description {
+  max-width: 470px;
+  margin: 30px auto 0;
+
+  font-family: "SUIT", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: none;
+  color: white;
+}
+
+/* 홈 화면 하단 정보 */
+
+.hero-bottom {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  left: 22px;
+  z-index: 12;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 10px;
+
+
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* 홈 화면 모바일 */
+
+@media (max-width: 700px) {
+  .hero-archive {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    top: 46%;
+    width: calc(100% - 28px);
+  }
+
+.hero-title-image {
+  width: 100%;
+  max-width: 520px;
+}
+
+  .hero-description {
+    max-width: 280px;
+    margin-top: 20px;
+    font-size: 9px;
+  }
+
+  .hero-image-1 {
+    top: 12%;
+    left: -5%;
+    width: 42%;
+    height: 33%;
+  }
+
+  .hero-image-2 {
+    top: 8%;
+    left: 38%;
+    width: 39%;
+    height: 24%;
+  }
+
+  .hero-image-3 {
+    top: 16%;
+    right: -10%;
+    width: 38%;
+    height: 39%;
+  }
+
+  .hero-image-4 {
+    bottom: 8%;
+    left: -4%;
+    width: 47%;
+    height: 28%;
+  }
+
+  .hero-image-5 {
+    right: 2%;
+    bottom: 9%;
+    width: 39%;
+    height: 26%;
+  }
+
+  .hero-bottom {
+    right: 14px;
+    bottom: 12px;
+    left: 14px;
+  }
+}
+
+/* 사진 1·2를 겹치지 않게 좌우 배치 */
+
+.cases {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding:
+    clamp(80px, 10vh, 140px)
+    clamp(30px, 5vw, 100px);
+}
+
+/* 사진 카드 공통 */
+
+.case {
+  position: relative;
+  top: auto;
+
+  width: 100%;
+  height: 76vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+
+  opacity: 0;
+  transform: translateY(70px);
+
+  transition:
+    opacity 700ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 첫 번째 사진: 왼쪽 칸 */
+
+.case:nth-of-type(1) {
+  grid-column: 1;
+}
+
+/* 두 번째 사진: 오른쪽 칸 */
+
+.case:nth-of-type(2) {
+  grid-column: 2;
+}
+
+/* 등장 완료 */
+
+.case.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-case {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 사진 전체가 잘리지 않게 표시 */
+
+.case-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+    .case.visible {
+      opacity: 1;
+      transform: translateY(0) rotate(0);
+    }
+
+    .case-blue {
+      background: var(--blue);
+      color: #f4f1e8;
+    }
+
+    .case-coral {
+      background: var(--coral);
+    }
+
+    .case-lime {
+      background: var(--lime);
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .case-meta span:last-child {
+      text-align: right;
+    }
+
+    .case h2 {
+      max-width: 1100px;
+      margin: 5vh 0 3vh;
+      font-family: var(--serif);
+      font-size: clamp(58px, 10vw, 155px);
+      font-weight: 400;
+      line-height: 0.78;
+      letter-spacing: -0.065em;
+    }
+
+    .case-description {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: end;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .case-description p {
+      max-width: 450px;
+      margin: 0;
+    }
+
+    .case-link {
+      justify-self: end;
+      padding-bottom: 2px;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .case-link span {
+      display: inline-block;
+      transition: transform 250ms ease;
+    }
+
+    .case-link:hover span {
+      transform: translate(4px, -4px);
+    }
+
+    .case {
+  position: sticky;
+  top: 72px;
+
+  width: 100%;
+  height: 82vh;
+  margin-bottom: 18vh;
+  padding: 0;
+
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.14);
+
+  opacity: 0;
+  transform: translateY(70px);
+
+  transition:
+    opacity 700ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.photo-case {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  box-shadow: none;
+}
+
+.case-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* 이 아래에 추가 */
+
+.cursor-follow-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  display: block;
+  width: clamp(600px, 12vw, 220px);
+  height: auto;
+
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, -50%);
+  transition: opacity 150ms ease;
+}
+
+.cursor-follow-image.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+    /* CSS-only visual area */
+
+    .case-visual {
+      position: relative;
+      height: 34vh;
+      min-height: 240px;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid currentColor;
+    }
+
+    .visual-one {
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0 20%,
+          currentColor 20% 20.15%,
+          transparent 20.15% 48%,
+          currentColor 48% 48.15%,
+          transparent 48.15% 76%,
+          currentColor 76% 76.15%,
+          transparent 76.15%
+        );
+    }
+
+    .visual-two {
+      background:
+        repeating-linear-gradient(
+          135deg,
+          transparent 0 8%,
+          currentColor 8% calc(8% + 1px)
+        );
+    }
+
+    .visual-three {
+      background:
+        radial-gradient(
+          circle at 20% 50%,
+          currentColor 0 8%,
+          transparent 8.2%
+        ),
+        repeating-linear-gradient(
+          0deg,
+          transparent 0 20%,
+          currentColor 20% calc(20% + 1px)
+        );
+    }
+
+    .case-number {
+      position: absolute;
+      right: 12px;
+      bottom: -20px;
+      color: white;
+      font-family: var(--serif);
+      font-size: clamp(90px, 13vw, 190px);
+      line-height: 1;
+      mix-blend-mode: difference;
+    }
+
+  /* Whole Archive */
+
+.studio {
+  min-height: 100vh;
+  padding: clamp(120px, 14vh, 180px) clamp(24px, 3vw, 60px);
+}
+
+.archive-intro {
+  max-width: 1500px;
+  margin: clamp(50px, 8vh, 100px) 0 clamp(70px, 11vh, 140px);
+  font-family: var(--serif);
+  font-size: clamp(58px, 7.5vw, 140px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.archive-index {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+}
+
+.archive-index a {
+  display: flex;
+  min-height: clamp(150px, 20vw, 300px);
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: clamp(14px, 2vw, 30px);
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+.archive-number {
+  font-family: var(--serif);
+  font-size: clamp(70px, 10vw, 180px);
+  line-height: 0.7;
+  letter-spacing: -0.06em;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.archive-index small {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.archive-index a:hover {
+  background: #111;
+  color: #f3f0e8;
+}
+
+.archive-index a:hover .archive-number {
+  transform: translateY(-12px);
+}
+    /* Footer */
+
+    .footer {
+      display: flex;
+      min-height: 72svh;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      background: var(--text);
+      color: var(--background);
+    }
+
+    .contact-link {
+      margin: auto 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid currentColor;
+      font-family: var(--serif);
+      font-size: clamp(48px, 9vw, 140px);
+      line-height: 0.82;
+      letter-spacing: -0.065em;
+    }
+
+    .contact-link span {
+      float: right;
+      font-family: var(--sans);
+      font-size: 0.3em;
+      letter-spacing: 0;
+    }
+
+    .footer-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+      .header {
+        grid-template-columns: 1fr auto;
+        padding: 14px;
+      }
+
+      .location {
+        display: none;
+      }
+
+      .menu-button {
+        position: relative;
+        z-index: 2;
+        display: block;
+      }
+
+      .navigation {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 8px;
+        padding: 80px 14px 28px;
+        background: var(--text);
+        color: var(--background);
+        font-family: var(--serif);
+        font-size: 16vw;
+        line-height: 0.82;
+        transform: translateY(-105%);
+        transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .navigation.open {
+        transform: translateY(0);
+      }
+
+      .intro {
+        padding: 16vh 14px 14px;
+      }
+
+      .intro h1 {
+        margin-top: auto;
+        font-size: 18vw;
+      }
+
+      .intro-footer {
+        grid-template-columns: 1fr auto;
+      }
+
+      .intro-footer p {
+        max-width: 230px;
+      }
+
+      .cases {
+        padding: 0 10px 14vh;
+      }
+
+      .case,
+      .case:nth-child(2),
+      .case:nth-child(3) {
+        top: 52px;
+        width: 100%;
+        min-height: 76svh;
+        margin-left: 0;
+        margin-bottom: 14vh;
+        padding: 12px;
+      }
+
+      .case:nth-child(2) {
+        top: 62px;
+      }
+
+      .case:nth-child(3) {
+        top: 72px;
+      }
+
+      .case-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .case-meta span:nth-child(2) {
+        display: none;
+      }
+
+      .case h2 {
+        margin: 5vh 0 3vh;
+        font-size: 17vw;
+      }
+
+      .case-description {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .case-link {
+        justify-self: start;
+      }
+
+      .case-visual {
+        height: 29vh;
+        min-height: 200px;
+      }
+
+      /* 마우스를 따라다니는 세 번째 PNG */
+
+
+/* 이미지 1·2 영역에 들어왔을 때만 표시 */
+
+
+      .studio {
+        padding: 10vh 14px 14vh;
+      }
+
+      .studio-text {
+        font-size: 12vw;
+      }
+
+      .footer {
+        padding: 14px;
+      }
+
+      .contact-link {
+        font-size: 12vw;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+/* ========================================
+   TWO PHOTO STICKY INTERACTION
+   사진 위치는 좌우 분리, 등장은 순차적
+======================================== */
+
+.cases {
+  display: block !important;
+
+  position: relative !important;
+
+  width: 100% !important;
+  min-height: auto !important;
+
+  padding:
+    clamp(80px, 9vh, 130px)
+    clamp(30px, 4vw, 80px)
+    20vh !important;
+}
+
+/* 두 사진 공통 */
+
+.cases > .photo-case {
+  position: sticky !important;
+
+  width: 45% !important;
+  height: 76vh !important;
+
+  padding: 0 !important;
+  margin-bottom: 22vh !important;
+
+  overflow: hidden !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  opacity: 0 !important;
+  transform: translateY(140px) !important;
+
+  animation: none !important;
+
+  transition:
+    opacity 700ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 사진 1: 왼쪽 */
+
+.cases > .photo-case-left {
+  top: 10vh !important;
+
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 사진 2: 오른쪽 */
+
+.cases > .photo-case-right {
+  top: 14vh !important;
+
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* 화면에 들어오면 아래에서 위로 올라옴 */
+
+.cases > .photo-case.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 사진 전체가 잘리지 않게 */
+
+.cases > .photo-case .case-photo {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* 홈은 정확히 한 화면을 채우고, 첫 사진은 그 아래에서 시작 */
+.hero-archive {
+  min-height: 100vh !important;
+}
+
+/* 원래 카드처럼 아래에서 위로 등장 */
+.cases > .photo-case {
+  opacity: 0 !important;
+  transform: translateY(35vh) !important;
+  transition:
+    opacity 700ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cases > .photo-case.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 두 사진 사이 간격만 줄이기 */
+
+.cases > .photo-case-left {
+  margin-left: 1% !important;
+}
+
+.cases > .photo-case-right {
+  margin-right: 1% !important;
+}
+
+/* 왼쪽 사진은 오른쪽 정렬 */
+
+.cases > .photo-case-left .case-photo {
+  object-position: right center !important;
+}
+
+/* 오른쪽 사진은 왼쪽 정렬 */
+
+.cases > .photo-case-right .case-photo {
+  object-position: left center !important;
+}
+
+/* 인터랙션 안내 문구 강조 */
+
+.hero-description {
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.interaction-hint {
+  display: inline-block;
+
+  color: white;
+  font-weight: 800;
+
+  animation: hint-glow 2.2s ease-in-out infinite;
+}
+
+.interaction-hint::after {
+  content: "✦";
+  display: inline-block;
+
+  margin-left: 5px;
+
+  font-size: 0.75em;
+  vertical-align: top;
+
+  animation: hint-sparkle 2.2s ease-in-out infinite;
+}
+
+@keyframes hint-glow {
+  0%,
+  100% {
+    opacity: 0.75;
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.4),
+      0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.45),
+      0 0 14px rgba(255, 255, 255, 0.95),
+      0 0 24px rgba(230, 215, 255, 0.65);
+  }
+}
+
+@keyframes hint-sparkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.7) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(25deg);
+  }
+}
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo" href="#top">
+      Galmuri<br>
+      Archive®
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navigation"
+    >
+      MENU
+    </button>
+
+    <nav class="navigation" id="navigation">
+      <a href="#studio">Whole Archive</a>
+      <a href="#cases">Selected Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <span class="location">
+      Jung Ji Hyeon
+    </span>
+  </header>
+
+  <main>
+ <section class="hero-archive" id="top">
+
+  <!-- 겹쳐지는 이미지 영역 -->
+
+  <div class="hero-images" aria-hidden="true">
+    <img
+      class="hero-image hero-image-1"
+      src="image-01.png"
+      alt=""
+    >
+
+    <img
+      class="hero-image hero-image-2"
+      src="image-02.png"
+      alt=""
+    >
+
+    <img
+      class="hero-image hero-image-3"
+      src="image-05.jpeg"
+      alt=""
+    >
+
+    <img
+      class="hero-image hero-image-4"
+      src="image-04.png"
+      alt=""
+    >
+
+    <img
+      class="hero-image hero-image-5"
+      src="image-03.png"
+      alt=""
+    >
+  </div>
+
+
+<!-- 타이틀과 설명 -->
+
+<div class="hero-content">
+  <img
+    class="hero-title-image"
+    src="title1.png"
+    alt="Galmuri Archive"
+  >
+
+  <div class="hero-description">
+    <span class="mouse-guide">
+      마우스를 움직이며 그래픽의 모티프를 찾아보세요
+    </span>
+
+    <br>
+
+    <a class="scroll-guide" href="#cases">
+      SCROLL DOWN
+      <span class="scroll-arrow">↓</span>
+    </a>
+  </div>
+</div>
+
+<!-- 홈 화면 하단 정보 -->
+
+<div class="hero-bottom">
+  <span>VISUAL ARCHIVE / 2026</span>
+  <span>SCROLL TO EXPLORE ↓</span>
+</div>
+
+</section>
+
+<div id="archive-sections"></div>
+
+<!-- 모든 섹션에서 공통으로 사용하는 커서 PNG -->
+
+<img
+  class="cursor-follow-image"
+  src=""
+  alt=""
+  aria-hidden="true"
+>
+<section class="studio" id="studio">
+  <p class="label">WHOLE ARCHIVE</p>
+
+  <h2 class="archive-intro">
+    An archive of fleeting forms found in light and shadow,
+    reconstructed through collected images and visual fragments.
+  </h2>
+
+  <nav class="archive-index" aria-label="Whole Archive">
+    <a href="#archive-1">
+      <span class="archive-number">01</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-2">
+      <span class="archive-number">02</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-3">
+      <span class="archive-number">03</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-4">
+      <span class="archive-number">04</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-5">
+      <span class="archive-number">05</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-6">
+      <span class="archive-number">06</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-7">
+      <span class="archive-number">07</span>
+      <small>VIEW</small>
+    </a>
+
+    <a href="#archive-8">
+      <span class="archive-number">08</span>
+      <small>VIEW</small>
+    </a>
+  </nav>
+</section>
+    
+  </main>
+
+
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navigation = document.querySelector(".navigation");
+    const navigationLinks = document.querySelectorAll(".navigation a");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+
+      menuButton.textContent = isOpen ? "CLOSE" : "MENU";
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navigationLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.textContent = "MENU";
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    /* ========================================
+   총 8개의 아카이브 섹션 생성
+======================================== */
+
+const archiveData = [
+  {
+    left: "case-01.jpg",
+    right: "case-02.jpg",
+    cursor: "case-03.png"
+  },
+  {
+    left: "case-04.jpg",
+    right: "case-05.jpg",
+    cursor: "case-06.png"
+  },
+  {
+    left: "case-07.jpg",
+    right: "case-08.jpg",
+    cursor: "case-09.png"
+  },
+  {
+    left: "case-10.jpg",
+    right: "case-11.jpg",
+    cursor: "case-12.png"
+  },
+  {
+    left: "case-13.jpg",
+    right: "case-14.jpg",
+    cursor: "case-15.png"
+  },
+  {
+    left: "case-16.jpg",
+    right: "case-17.jpg",
+    cursor: "case-18.png"
+  },
+  {
+    left: "case-19.jpg",
+    right: "case-20.jpg",
+    cursor: "case-21.png"
+  },
+  {
+    left: "case-22.jpg",
+    right: "case-23.jpg",
+    cursor: "case-24.png"
+  }
+];
+
+const archiveContainer =
+  document.querySelector("#archive-sections");
+
+archiveContainer.innerHTML = archiveData
+  .map((archive, index) => {
+   const sectionId = `id="archive-${index + 1}"`;
+
+    return `
+      <section
+        class="cases archive-section"
+        ${sectionId}
+        data-cursor-image="${archive.cursor}"
+      >
+        <article
+          class="case photo-case photo-case-left"
+        >
+          <img
+            class="case-photo"
+            src="${archive.left}"
+            alt="Archive image ${index * 3 + 1}"
+          >
+        </article>
+
+        <article
+          class="case photo-case photo-case-right"
+        >
+          <img
+            class="case-photo"
+            src="${archive.right}"
+            alt="Archive image ${index * 3 + 2}"
+          >
+        </article>
+      </section>
+    `;
+  })
+  .join("");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+    document.querySelectorAll(".case").forEach((card) => {
+      observer.observe(card);
+    });
+
+    /* 이미지 1·2 위에서만 세 번째 PNG가 커서를 따라다님 */
+
+/* ========================================
+   현재 섹션에 맞게 커서 PNG 교체
+======================================== */
+
+const archiveSections =
+  document.querySelectorAll(".archive-section");
+
+const cursorFollowImage =
+  document.querySelector(".cursor-follow-image");
+
+/* 마우스를 움직이지 않아도 최초 위치가 존재 */
+
+let cursorX = window.innerWidth / 2;
+let cursorY = window.innerHeight / 2;
+
+function updateCursorImagePosition() {
+  cursorFollowImage.style.left = cursorX + "px";
+  cursorFollowImage.style.top = cursorY + "px";
+}
+
+/* 화면 중앙에 있는 아카이브 섹션 찾기 */
+
+function updateActiveArchiveSection() {
+  const viewportCenter = window.innerHeight / 2;
+
+  let activeSection = null;
+
+  archiveSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+
+    if (
+      rect.top <= viewportCenter &&
+      rect.bottom >= viewportCenter
+    ) {
+      activeSection = section;
+    }
+  });
+
+  /* 아카이브 영역 밖에서는 커서 PNG 숨김 */
+
+  if (!activeSection) {
+    cursorFollowImage.classList.remove("is-visible");
+    return;
+  }
+
+  /* 현재 섹션에 해당하는 PNG로 교체 */
+
+  const nextCursorImage =
+    activeSection.dataset.cursorImage;
+
+  if (
+    cursorFollowImage.getAttribute("src") !==
+    nextCursorImage
+  ) {
+    cursorFollowImage.setAttribute(
+      "src",
+      nextCursorImage
+    );
+  }
+
+  updateCursorImagePosition();
+  cursorFollowImage.classList.add("is-visible");
+}
+
+/* 마우스 위치 추적 */
+
+document.addEventListener("pointermove", (event) => {
+  cursorX = event.clientX;
+  cursorY = event.clientY;
+
+  updateCursorImagePosition();
+  updateActiveArchiveSection();
+});
+
+/* 스크롤만 해도 PNG가 자동으로 교체됨 */
+
+window.addEventListener(
+  "scroll",
+  updateActiveArchiveSection,
+  { passive: true }
+);
+
+window.addEventListener(
+  "resize",
+  updateActiveArchiveSection
+);
+
+/* 페이지를 처음 열었을 때도 확인 */
+
+updateActiveArchiveSection();
+  </script>
+</body>
+</html>
